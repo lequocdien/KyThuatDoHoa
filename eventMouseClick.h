@@ -8,7 +8,7 @@ void gridMouseClick(){
 		if(ismouseclick(WM_LBUTTONDOWN))
 		{
 			getmouseclick(WM_LBUTTONDOWN, x, y);
-			if(x >= 210 && x <= 1190 && y >= 70 && y <= getmaxy() - 10){
+			if(x >= WIDTH_PANEL_LEFT + 10 && x <= WIDTH_PANEL_MAIN - 10 && y >= HEIGHT_PANEL_TOP + 10 && y <= getmaxy() - 10){
 				cout<<"\tToa do click Work Station ban dau: "<<x<<" "<<y<<endl;
 				x = LamTronToaDo(x);
 				y = LamTronToaDo(y);
@@ -29,14 +29,14 @@ void buttonsMouseClick(){
 			getmouseclick(WM_LBUTTONDOWN, x, y);
 			cout<<"To doa click: "<<x<<" "<<y<<endl;
 			
-			if(x >= 0 && x <= 200 && y >= 210 && y <= 260){
+			if(x >= 0 && x <= 200 && y >= SPACE_FIRST_BUTTON && y <= SPACE_FIRST_BUTTON + 50){
 				//Phan xu ly giao dien khi click vao "2D 1"
-				button(0, 210, 200, 260, 15, "2D 1", 4, 4, 0);
-				button(0, 270, 200, 320, 8, "2D 2", 4, 2, 15);
-				button(0, 330, 200, 380, 8, "3D 1", 4, 2, 15);
-				button(0, 390, 200, 440, 8, "3D 2", 4, 2, 15);
-				button(0, 450, 200, 500, 8, "About", 4, 2, 15);
-				button(0, 510, 200, 560, 8, "Help", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON, 200, SPACE_FIRST_BUTTON + 50, 15, "2D 1", 4, 4, 0);
+				button(0, SPACE_FIRST_BUTTON + 60, 200, SPACE_FIRST_BUTTON + 110, 8, "2D 2", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON + 120, 200, SPACE_FIRST_BUTTON + 170, 8, "3D 1", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON + 180, 200, SPACE_FIRST_BUTTON + 230, 8, "3D 2", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON + 240, 200, SPACE_FIRST_BUTTON + 290, 8, "About", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON + 300, 200, SPACE_FIRST_BUTTON + 350, 8, "Help", 4, 2, 15);
 				
 				//Thay btn Run
 				button(0, 0, WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP, 2, "RUN", 10, 4, 14);
@@ -50,15 +50,15 @@ void buttonsMouseClick(){
 				
 				
 			}
-			else if(x >= 0 && x <= 200 && y >= 270 && y <= 320){
+			else if(x >= 0 && x <= 200 && y >= SPACE_FIRST_BUTTON + 60 && y <= SPACE_FIRST_BUTTON + 110){
 				
 				//Phan xu ly giao dien khi click vao "2D 2"
-				button(0, 210, 200, 260, 8, "2D 1", 4, 2, 15);
-				button(0, 270, 200, 320, 15, "2D 2", 4, 4, 0);
-				button(0, 330, 200, 380, 8, "3D 1", 4, 2, 15);
-				button(0, 390, 200, 440, 8, "3D 2", 4, 2, 15);
-				button(0, 450, 200, 500, 8, "About", 4, 2, 15);
-				button(0, 510, 200, 560, 8, "Help", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON, 200, SPACE_FIRST_BUTTON + 50, 8, "2D 1", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON + 60, 200, SPACE_FIRST_BUTTON + 110, 15, "2D 2", 4, 4, 0);
+				button(0, SPACE_FIRST_BUTTON + 120, 200, SPACE_FIRST_BUTTON + 170, 8, "3D 1", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON + 180, 200, SPACE_FIRST_BUTTON + 230, 8, "3D 2", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON + 240, 200, SPACE_FIRST_BUTTON + 290, 8, "About", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON + 300, 200, SPACE_FIRST_BUTTON + 350, 8, "Help", 4, 2, 15);
 				
 				//Thay btn Run
 				button(0, 0, WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP, 2, "RUN", 10, 4, 14);
@@ -69,15 +69,15 @@ void buttonsMouseClick(){
 					PROCESSING by DUONG
 				*/
 			}
-			else if(x >= 0 && x <= 200 && y >= 330 && y <= 380){
+			else if(x >= 0 && x <= 200 && y >= SPACE_FIRST_BUTTON + 120 && y <= SPACE_FIRST_BUTTON + 170){
 				
 				//Phan xu ly giao dien khi click vao "3D 1"
-				button(0, 210, 200, 260, 8, "2D 1", 4, 2, 15);
-				button(0, 270, 200, 320, 8, "2D 2", 4, 2, 15);
-				button(0, 330, 200, 380, 15, "3D 1", 4, 4, 0);
-				button(0, 390, 200, 440, 8, "3D 2", 4, 2, 15);
-				button(0, 450, 200, 500, 8, "About", 4, 2, 15);
-				button(0, 510, 200, 560, 8, "Help", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON, 200, SPACE_FIRST_BUTTON + 50, 8, "2D 1", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON + 60, 200, SPACE_FIRST_BUTTON + 110, 8, "2D 2", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON + 120, 200, SPACE_FIRST_BUTTON + 170, 15, "3D 1", 4, 4, 0);
+				button(0, SPACE_FIRST_BUTTON + 180, 200, SPACE_FIRST_BUTTON + 230, 8, "3D 2", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON + 240, 200, SPACE_FIRST_BUTTON + 290, 8, "About", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON + 300, 200, SPACE_FIRST_BUTTON + 350, 8, "Help", 4, 2, 15);
 				
 				//Xoa btn RUN
 				rectangleSolid(0, 0, WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP, 2);
@@ -105,15 +105,15 @@ void buttonsMouseClick(){
 //				outtextxy(0,0, "Hello");
 				
 			}
-			else if(x >= 0 && x <= 200 && y >= 390 && y <= 440){
+			else if(x >= 0 && x <= 200 && y >= SPACE_FIRST_BUTTON + 180 && y <= SPACE_FIRST_BUTTON + 230){
 				
 				//Phan xu ly giao dien khi click vao "3D 2"
-				button(0, 210, 200, 260, 8, "2D 1", 4, 2, 15);
-				button(0, 270, 200, 320, 8, "2D 2", 4, 2, 15);
-				button(0, 330, 200, 380, 8, "3D 1", 4, 2, 15);
-				button(0, 390, 200, 440, 15, "3D 2", 4, 4, 0);
-				button(0, 450, 200, 500, 8, "About", 4, 2, 15);
-				button(0, 510, 200, 560, 8, "Help", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON, 200, SPACE_FIRST_BUTTON + 50, 8, "2D 1", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON + 60, 200, SPACE_FIRST_BUTTON + 110, 8, "2D 2", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON + 120, 200, SPACE_FIRST_BUTTON + 170, 8, "3D 1", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON + 180, 200, SPACE_FIRST_BUTTON + 230, 15, "3D 2", 4, 4, 0);
+				button(0, SPACE_FIRST_BUTTON + 240, 200, SPACE_FIRST_BUTTON + 290, 8, "About", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON + 300, 200, SPACE_FIRST_BUTTON + 350, 8, "Help", 4, 2, 15);
 				
 				//Xoa btn RUN
 				rectangleSolid(0, 0, WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP, 2);
@@ -126,13 +126,13 @@ void buttonsMouseClick(){
 				*/
 			
 			}
-			else if(x >= 0 && x <= 200 &&  y >= 450 && y <= 500){
-				button(0, 210, 200, 260, 8, "2D 1", 4, 2, 15);
-				button(0, 270, 200, 320, 8, "2D 2", 4, 2, 15);
-				button(0, 330, 200, 380, 8, "3D 1", 4, 2, 15);
-				button(0, 390, 200, 440, 8, "3D 2", 4, 2, 15);
-				button(0, 450, 200, 500, 15, "About", 4, 4, 0);
-				button(0, 510, 200, 560, 8, "Help", 4, 2, 15);
+			else if(x >= 0 && x <= 200 &&  y >= SPACE_FIRST_BUTTON + 240 && y <= SPACE_FIRST_BUTTON + 290){
+				button(0, SPACE_FIRST_BUTTON, 200, SPACE_FIRST_BUTTON + 50, 8, "2D 1", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON + 60, 200, SPACE_FIRST_BUTTON + 110, 8, "2D 2", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON + 120, 200, SPACE_FIRST_BUTTON + 170, 8, "3D 1", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON + 180, 200, SPACE_FIRST_BUTTON + 230, 8, "3D 2", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON + 240, 200, SPACE_FIRST_BUTTON + 290, 15, "About", 4, 4, 0);
+				button(0, SPACE_FIRST_BUTTON + 300, 200, SPACE_FIRST_BUTTON + 350, 8, "Help", 4, 2, 15);
 				
 				//Xoa btn RUN
 				rectangleSolid(0, 0, WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP, 2);
@@ -144,13 +144,13 @@ void buttonsMouseClick(){
 				button(WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP + 390, WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, HEIGHT_PANEL_TOP + 420, 7, "3. Vu Van Duong - N16DCCN035", 9, 2, 14);
 			
 			}
-			else if(x >= 0 && x <= 200 && y >= 510 && y <= 560){
-				button(0, 210, 200, 260, 8, "2D 1", 4, 2, 15);
-				button(0, 270, 200, 320, 8, "2D 2", 4, 2, 15);
-				button(0, 330, 200, 380, 8, "3D 1", 4, 2, 15);
-				button(0, 390, 200, 440, 8, "3D 2", 4, 2, 15);
-				button(0, 450, 200, 500, 8, "About", 4, 2, 15);
-				button(0, 510, 200, 560, 15, "Help", 4, 4, 0);
+			else if(x >= 0 && x <= 200 && y >= SPACE_FIRST_BUTTON + 300 && y <= SPACE_FIRST_BUTTON + 350){
+				button(0, SPACE_FIRST_BUTTON, 200, SPACE_FIRST_BUTTON + 50, 8, "2D 1", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON + 60, 200, SPACE_FIRST_BUTTON + 110, 8, "2D 2", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON + 120, 200, SPACE_FIRST_BUTTON + 170, 8, "3D 1", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON + 180, 200, SPACE_FIRST_BUTTON + 230, 8, "3D 2", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON + 240, 200, SPACE_FIRST_BUTTON + 290, 8, "About", 4, 2, 15);
+				button(0, SPACE_FIRST_BUTTON + 300, 200, SPACE_FIRST_BUTTON + 350, 15, "Help", 4, 4, 0);
 				
 				//Xoa btn RUN
 				rectangleSolid(0, 0, WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP, 2);

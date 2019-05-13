@@ -8,7 +8,7 @@ void initGUI()
 	rectangleSolid(0, 0, WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP, 2);
 	
 	//Draw buttons
-	int currentPosition = HEIGHT_PANEL_TOP + 140;	//NOTE: Update khi thay doi
+	int currentPosition = SPACE_FIRST_BUTTON - SPACE_BUTTON;	//NOTE: Update khi thay doi
 	char* nameButton[] = {"2D 1", "2D 2", "3D 1", "3D 2", "About", "Help"};
 	for(int i = 0; i < 6; i++){
 		button(0, currentPosition + SPACE_BUTTON, WIDTH_PANEL_LEFT, currentPosition + SPACE_BUTTON + HEIGHT_BUTTON, 8, nameButton[i], 4, 2, 15);
