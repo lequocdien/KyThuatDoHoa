@@ -26,6 +26,6 @@ int main (){
 	buttonsMouseClick(); 
 	
 	getch();
-	return 0;        
+	return 0;   
 	                                                                                
 }

@@ -84,6 +84,7 @@ void ghiTextTaiViTriXY(int &x, int &y, char s[], int color)
 	x += textwidth(s);
 }
 
+//Nhan ky tu so tu ban phim (so luong chu so toi da la 3)
 int nhanKyTuTuBanPhim(int x, int y){
 	char outPut[4];
 	char ch[2];
@@ -101,7 +102,7 @@ int nhanKyTuTuBanPhim(int x, int y){
 		temp = getch();
 		
 		if (temp >= '0' && temp <= '9'){
-			if (i<4)
+			if (i<3)
 			{			
 				ch[0] = temp;
 				ghiTextTaiViTriXY(x, y, ch, 8);
@@ -330,6 +331,30 @@ void tinhTien(int &x, int &y, int dx, int dy){
 	y = y + dy;
 }
 
+void ghiToaDoOXYZ(int viTriBatDauX, int &viTriBatDauY, int giaTriX, int giaTriY, int giaTriZ){
+	char tmp[4];
+	_itoa(giaTriX, tmp, 10); outtextxy(viTriBatDauX, viTriBatDauY, tmp); outtextxy(viTriBatDauX + 40, viTriBatDauY, ";"); viTriBatDauX = viTriBatDauX + 50;
+	_itoa(giaTriY, tmp, 10); outtextxy(viTriBatDauX, viTriBatDauY, tmp); outtextxy(viTriBatDauX + 40, viTriBatDauY, ";"); viTriBatDauX = viTriBatDauX + 50;
+	_itoa(giaTriZ, tmp, 10); outtextxy(viTriBatDauX, viTriBatDauY, tmp); outtextxy(viTriBatDauX + 40, viTriBatDauY, ")");
+}
+//Hien thi thong tin hinh tru
+void showInfoHinhHop(int x, int y, int z, int chieuDai, int chieuRong, int chieuCao){
+	int viTriY = 185;	//NOTE: Update khi thay doi
+	settextstyle(10, 0, 1);	//NOTE: Update khi thay doi
+	setbkcolor(8);			//NOTE: Update khi thay doi
+	setcolor(15);	//NOTE: Update khi thay doi
+	
+	//Chuyen cac toa do cua dang so sang dang text
+	char tmp[4];
+	outtextxy(1105, viTriY, "B ("); ghiToaDoOXYZ(1140, viTriY, x/5 + chieuDai/5, y/5, z/5); viTriY = viTriY + 30;		//NOTE: Update khi thay doi
+	outtextxy(1105, viTriY, "C ("); ghiToaDoOXYZ(1140, viTriY, x/5 + chieuDai/5, y/5 + chieuRong/5, z/5); viTriY = viTriY + 30;		//NOTE: Update khi thay doi
+	outtextxy(1105, viTriY, "D ("); ghiToaDoOXYZ(1140, viTriY, x/5, y/5 + chieuRong/5, z/5); viTriY = viTriY + 30;		//NOTE: Update khi thay doi
+	outtextxy(1105, viTriY, "E ("); ghiToaDoOXYZ(1140, viTriY, x/5, y/5, z/5 + chieuCao/5); viTriY = viTriY + 30;		//NOTE: Update khi thay doi
+	outtextxy(1105, viTriY, "F ("); ghiToaDoOXYZ(1140, viTriY, x/5 + chieuDai/5, y/5, z/5 + chieuCao/5); viTriY = viTriY + 30;		//NOTE: Update khi thay doi
+	outtextxy(1105, viTriY, "G ("); ghiToaDoOXYZ(1140, viTriY, x/5 + chieuDai/5, y/5 + chieuRong/5, z/5 + chieuCao/5); viTriY = viTriY + 30;		//NOTE: Update khi thay doi
+	outtextxy(1105, viTriY, "H ("); ghiToaDoOXYZ(1140, viTriY, x/5, y/5 + chieuRong/5, z/5 + chieuCao/5);
+}
+
 //Ve hinh hop chu nhat (input is 4 arguments)
 void veHinhChuNhat(int x, int y, int z, int chieuDai, int chieuRong, int chieuCao){
 	
@@ -386,14 +411,7 @@ void veHinhChuNhat(int x, int y, int z, int chieuDai, int chieuRong, int chieuCa
 	lineDDA(dsDiemOXY[3].toaDoX, dsDiemOXY[3].toaDoY, dsDiemOXY[7].toaDoX, dsDiemOXY[7].toaDoY, 1);
 	
 	//Hien thi thong tin cac diem con lai cua hinh hop
-
-//	outtextxy(1105, viTriY, "B (    ;    ;    )"); 	viTriY = viTriY + 30;		//NOTE: Update khi thay doi
-//	outtextxy(1105, viTriY, "C (    ;    ;    )"); 	viTriY = viTriY + 30;		//NOTE: Update khi thay doi
-//	outtextxy(1105, viTriY, "D (    ;    ;    )"); 	viTriY = viTriY + 30;		//NOTE: Update khi thay doi
-//	outtextxy(1105, viTriY, "E (    ;    ;    )"); 	viTriY = viTriY + 30;		//NOTE: Update khi thay doi
-//	outtextxy(1105, viTriY, "F (    ;    ;    )"); 	viTriY = viTriY + 30;		//NOTE: Update khi thay doi
-//	outtextxy(1105, viTriY, "G (    ;    ;    )"); 	viTriY = viTriY + 30;		//NOTE: Update khi thay doi
-//	outtextxy(1105, viTriY, "H (    ;    ;    )");
+	showInfoHinhHop(x, y, z, chieuDai, chieuRong, chieuCao);
 }
 	
 
@@ -453,26 +471,6 @@ void veHinhEllipseCoNetDut(int cx, int cy, int a, int b){
     }
 }
 
-//Hien thi thong tin hinh tru
-void showInfoHinhTru(int x, int y, int z, int banKinhDay, int chieuCao){
-	int viTriY = 125;	//NOTE: Update khi thay doi
-	settextstyle(10, 0, 1);	//NOTE: Update khi thay doi
-	setbkcolor(8);			//NOTE: Update khi thay doi
-	setcolor(15);	//NOTE: Update khi thay doi
-	
-	//Chuyen cac toa do cua dang so sang dang text
-	char txt_x[3]; char txt_y[3]; char txt_z[3];
-	txt_x[2] = 0; txt_y[2] = 0; txt_z[2] = 0;
-	_itoa(x/5, txt_x, 10);
-	_itoa(y/5, txt_y, 10);
-	_itoa(z/5+chieuCao, txt_z, 10);
-	cout<<"X: "<<txt_x<<endl;
-	cout<<"Y: "<<txt_y<<endl;
-	cout<<"Z: "<<txt_z<<endl;
-	outtextxy(1105, viTriY, "Tam 2 ("); outtextxy(1180, viTriY, txt_x); outtextxy(1220, viTriY, txt_y); outtextxy(1260, viTriY, txt_z);	viTriY = viTriY + 30;		//NOTE: Update khi thay doi
-	outtextxy(1105, viTriY, "R1 (    ;    ;    )"); 	viTriY = viTriY + 30;		//NOTE: Update khi thay doi
-	outtextxy(1105, viTriY, "R2 (    ;    ;    )"); 
-}
 //Ve hinh Ellipse
 void veHinhEllipse(int cx, int cy, int a, int b){
 	int dem = 0;
@@ -514,6 +512,20 @@ void veHinhEllipse(int cx, int cy, int a, int b){
         }
         put4Pixels(x, LamTronToaDo(y), cx, cy);
     }
+}
+
+//Hien thi thong tin hinh tru
+void showInfoHinhTru(int x, int y, int z, int banKinhDay, int chieuCao){
+	int viTriY = 155;	//NOTE: Update khi thay doi
+	settextstyle(10, 0, 1);	//NOTE: Update khi thay doi
+	setbkcolor(8);			//NOTE: Update khi thay doi
+	setcolor(15);	//NOTE: Update khi thay doi
+	
+	//Chuyen cac toa do cua dang so sang dang text
+	char tmp[4];
+	outtextxy(1105, viTriY, "Tam 2 ("); ghiToaDoOXYZ(1180, viTriY, x/5, y/5, z/5 + chieuCao/5); viTriY = viTriY + 30;
+	outtextxy(1105, viTriY, "R1 = "); _itoa(banKinhDay/5*1.22, tmp, 10); outtextxy(1160, viTriY, tmp);	viTriY = viTriY + 30;		//NOTE: Update khi thay doi
+	outtextxy(1105, viTriY, "R2 = "); _itoa(banKinhDay/5*0.71, tmp, 10); outtextxy(1160, viTriY, tmp);
 }
 
 //Ve hinh tru
