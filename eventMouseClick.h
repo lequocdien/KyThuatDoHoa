@@ -224,11 +224,15 @@ void buttonsMouseClick(){
 				//Xoa btn RUN
 				rectangleSolid(0, 0, WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP, 2);
 				
-				rectangleSolid(WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP, WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, getmaxy(), 15); 	//Reset panel main	
-				button(WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP + 300, WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, HEIGHT_PANEL_TOP + 330, 7, "Copyright © 2019 by", 9, 2, 1);
-				button(WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP + 330, WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, HEIGHT_PANEL_TOP + 360, 7, "1. Le Quoc Dien - N16DCCN023", 9, 2, 1);
-				button(WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP + 360, WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, HEIGHT_PANEL_TOP + 390, 7, "2. Phung Van Dai - N16DCCN034", 9, 2, 1);
-				button(WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP + 390, WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, HEIGHT_PANEL_TOP + 420, 7, "3. Vu Van Duong - N16DCCN035", 9, 2, 1);
+				//Reset panel main
+				rectangleSolid(WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP, WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, getmaxy(), 15); 		
+				
+				//Reset panel right
+				rectangleSolid(WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, 0, getmaxx(), getmaxy(), 8);
+				button(WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP + 250, WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, HEIGHT_PANEL_TOP + 280, 7, "Copyright © 2019 by", 9, 2, 1);
+				button(WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP + 280, WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, HEIGHT_PANEL_TOP + 310, 7, "1. Le Quoc Dien - N16DCCN023", 9, 2, 1);
+				button(WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP + 310, WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, HEIGHT_PANEL_TOP + 340, 7, "2. Phung Van Dai - N16DCCN034", 9, 2, 1);
+				button(WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP + 340, WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, HEIGHT_PANEL_TOP + 370, 7, "3. Vu Van Duong - N16DCCN035", 9, 2, 1);
 			
 			}
 			else if(x >= 0 && x <= 200 && y >= SPACE_FIRST_BUTTON + 300 && y <= SPACE_FIRST_BUTTON + 350){
@@ -243,8 +247,13 @@ void buttonsMouseClick(){
 				//Xoa btn RUN
 				rectangleSolid(0, 0, WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP, 2);
 				
-				rectangleSolid(WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP, WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, getmaxy(), 15); 	//Reset panel main	
-				button(WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP + 350, WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, HEIGHT_PANEL_TOP + 380, 7, "Help yourself !", 9, 2, 1);
+				//Reset panel main
+				rectangleSolid(WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP, WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, getmaxy(), 15);	
+				
+				//Reset panel right
+				rectangleSolid(WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, 0, getmaxx(), getmaxy(), 8);
+				
+				button(WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP + 350, WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, HEIGHT_PANEL_TOP + 250, 7, "Help yourself !", 9, 2, 1);
 			}
 			clearmouseclick(WM_LBUTTONDOWN);
 		}
