@@ -1,5 +1,6 @@
 #include "veHinh3D.h"
 #include "vehinh2D.h"
+#include "2D2.h"
 //Xu ly xu kien khi click vao Grid
 void gridMouseClick(){
 	while(true)
@@ -79,11 +80,25 @@ void buttonsMouseClick(){
 				
 				//Phan ve, hien thi hinh anh khi click vao "2D 2"
 				rectangleSolid(WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP, WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, getmaxy(), 15); 	//Reset panel main	
+				rectangleSolid(WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, 0, getmaxx(), getmaxy(), 8);
+				
+				initWorkStationDuong();
+			
+				maybay(1);	
+				
+				trangthai=0;
 				/*
 					PROCESSING by DUONG
 				*/
 			}
+			else if(x>=0 && x<= 200 && y>=0 && y<=60 && trangthai==0){
+							//	cout<<"ok run";
+								moveDuong(1);
+								trangthai=-1;
+			}
+			
 			else if(x >= 0 && x <= 200 && y >= SPACE_FIRST_BUTTON + 120 && y <= SPACE_FIRST_BUTTON + 170){
+				trangthai=-1;
 				cout<<"\t\t\t\t=================3D1================="<<endl;
 				//Phan xu ly giao dien khi click vao "3D 1"
 				button(0, SPACE_FIRST_BUTTON, 200, SPACE_FIRST_BUTTON + 50, 8, "2D 1", 4, 2, 15);
@@ -141,6 +156,7 @@ void buttonsMouseClick(){
 				
 			}
 			else if(x >= 0 && x <= 200 && y >= SPACE_FIRST_BUTTON + 180 && y <= SPACE_FIRST_BUTTON + 230){
+				trangthai=-1;
 				cout<<"\t\t\t\t=================3D2================="<<endl;
 				//Phan xu ly giao dien khi click vao "3D 2"
 				button(0, SPACE_FIRST_BUTTON, 200, SPACE_FIRST_BUTTON + 50, 8, "2D 1", 4, 2, 15);
@@ -197,6 +213,7 @@ void buttonsMouseClick(){
 //				veHinhTru(40, 30, 20, 20, 50);
 			}
 			else if(x >= 0 && x <= 200 &&  y >= SPACE_FIRST_BUTTON + 240 && y <= SPACE_FIRST_BUTTON + 290){
+				trangthai=-1;
 				button(0, SPACE_FIRST_BUTTON, 200, SPACE_FIRST_BUTTON + 50, 8, "2D 1", 4, 2, 15);
 				button(0, SPACE_FIRST_BUTTON + 60, 200, SPACE_FIRST_BUTTON + 110, 8, "2D 2", 4, 2, 15);
 				button(0, SPACE_FIRST_BUTTON + 120, 200, SPACE_FIRST_BUTTON + 170, 8, "3D 1", 4, 2, 15);
@@ -215,6 +232,7 @@ void buttonsMouseClick(){
 			
 			}
 			else if(x >= 0 && x <= 200 && y >= SPACE_FIRST_BUTTON + 300 && y <= SPACE_FIRST_BUTTON + 350){
+				trangthai=-1;
 				button(0, SPACE_FIRST_BUTTON, 200, SPACE_FIRST_BUTTON + 50, 8, "2D 1", 4, 2, 15);
 				button(0, SPACE_FIRST_BUTTON + 60, 200, SPACE_FIRST_BUTTON + 110, 8, "2D 2", 4, 2, 15);
 				button(0, SPACE_FIRST_BUTTON + 120, 200, SPACE_FIRST_BUTTON + 170, 8, "3D 1", 4, 2, 15);
