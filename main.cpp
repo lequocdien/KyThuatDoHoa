@@ -10,6 +10,8 @@
 #define GOC_TOA_DO_Y 660
 #define DELAY 0
 
+
+
 #include<iostream>
 #include<stdio.h>
 #include<graphics.h>
@@ -21,6 +23,7 @@ using namespace std;
 
  
 int main (){
+	
 	initwindow(1350, 700, "Ve hinh co ban", 160, 450); 
 	initGUI();
 	buttonsMouseClick(); 

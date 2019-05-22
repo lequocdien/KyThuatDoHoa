@@ -1,4 +1,5 @@
 #include "veHinh3D.h"
+#include "vehinh2D.h"
 //Xu ly xu kien khi click vao Grid
 void gridMouseClick(){
 	while(true)
@@ -17,7 +18,7 @@ void gridMouseClick(){
 		}
 	}
 }
-
+int trangthai=-1;
 //Xu ly su kien click vao cac button
 void buttonsMouseClick(){
 	while(true)
@@ -28,7 +29,7 @@ void buttonsMouseClick(){
 		{
 			getmouseclick(WM_LBUTTONDOWN, x, y);
 			cout<<"To doa click: "<<x<<" "<<y<<endl;
-			
+			XuatToaDoClick(x,y);
 			if(x >= 0 && x <= 200 && y >= SPACE_FIRST_BUTTON && y <= SPACE_FIRST_BUTTON + 50){
 				//Phan xu ly giao dien khi click vao "2D 1"
 				button(0, SPACE_FIRST_BUTTON, 200, SPACE_FIRST_BUTTON + 50, 15, "2D 1", 4, 4, 0);
@@ -43,13 +44,26 @@ void buttonsMouseClick(){
 				
 				//Phan ve, hien thi hinh anh khi click vao "2D 1"
 				rectangleSolid(WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP, WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, getmaxy(), 15); 	//Reset panel main				
+				rectangleSolid(WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, 0, getmaxx(), getmaxy(), 8);
 				/*
 					PROCESSING by DAI
 				*/
-				
+				initWorkStationDai();
+				//HeToaDo2ChieuDai();
+				DrawTree();
+				QuatGio();
+				Sticks();
+				trangthai=1;
 				
 				
 			}
+			else if(x>=0&&x<=200&&y>=0&&y<=60&&trangthai==1)
+						{
+							QuatGioWhite();
+						    MoveApple();
+							//QuatGio();	
+						    trangthai=-1;
+						}
 			else if(x >= 0 && x <= 200 && y >= SPACE_FIRST_BUTTON + 60 && y <= SPACE_FIRST_BUTTON + 110){
 				
 				//Phan xu ly giao dien khi click vao "2D 2"
