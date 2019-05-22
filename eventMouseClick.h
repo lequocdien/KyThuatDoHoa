@@ -70,7 +70,7 @@ void buttonsMouseClick(){
 				*/
 			}
 			else if(x >= 0 && x <= 200 && y >= SPACE_FIRST_BUTTON + 120 && y <= SPACE_FIRST_BUTTON + 170){
-				
+				cout<<"\t\t\t\t=================3D1================="<<endl;
 				//Phan xu ly giao dien khi click vao "3D 1"
 				button(0, SPACE_FIRST_BUTTON, 200, SPACE_FIRST_BUTTON + 50, 8, "2D 1", 4, 2, 15);
 				button(0, SPACE_FIRST_BUTTON + 60, 200, SPACE_FIRST_BUTTON + 110, 8, "2D 2", 4, 2, 15);
@@ -85,28 +85,49 @@ void buttonsMouseClick(){
 				//Reset panel main	
 				rectangleSolid(WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP, WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, getmaxy(), 15); 		
 				
-				//Phan ve, hien thi hinh anh khi click vao "3D 1"
-				initWorkStation();	//Khoi tao truc toa do va luoi
-				veHinhChuNhat();
+				//Reset panel right
+				rectangleSolid(WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, 0, getmaxx(), getmaxy(), 8);
 				
-//				lineDDA(420,250,257,172);
+				//Khoi tao truc toa do va luoi
+				initWorkStation();	
 				
-//				DIEM a, b;
-//				a.toaDoX = 420;
-//				a.toaDoY = 250;
-//				b.toaDoX = 257;
-//				b.toaDoY = 172;
-//////				lineDDA1(a,b);
-//				lineDDA(a.toaDoX, a.toaDoY, b.toaDoX, b.toaDoY);
+				//Khoi tao phan information
+				initGUIInfoHinhHop();
 				
-//				DDALine(a, b);
-//				line(rectangularPoints[0].toaDoX, rectangularPoints[0].toaDoY, rectangularPoints[1].toaDoX, rectangularPoints[1].toaDoY);
-//				setviewport(800, 400, 900, 500, 1);
-//				outtextxy(0,0, "Hello");
+				//Lay cac input tu nguoi dung
+				int inPut[6];
+				int toaDoX = 1140;
+				int toaDoY = 65;
+				for(int i = 0; i<6; i++){
+					if(i == 0 || i == 1 || i == 2){
+						inPut[i] = nhanKyTuTuBanPhim(toaDoX, toaDoY);
+						if(i == 0 || i == 1){
+							outtextxy(toaDoX + 45, toaDoY, ";");
+						}
+						else{
+							outtextxy(toaDoX + 45, toaDoY, ")");
+						}
+						toaDoX = toaDoX + 60;
+					}
+					else{
+						toaDoX = 1230;
+						toaDoY = toaDoY + 30;
+						inPut[i] = nhanKyTuTuBanPhim(toaDoX, toaDoY);
+					}
+					
+				}
+				cout<<"\t\tINPUT"<<endl;
+				for(int i = 0; i<6; i++){
+					cout<<"\t"<<inPut[i]<<endl;
+				}
+				
+				//Ve hinh chu nhat
+				veHinhChuNhat(inPut[0]*5, inPut[1]*5, inPut[2]*5, inPut[3]*5, inPut[4]*5, inPut[5]*5);
+//				veHinhChuNhat(40, 30, 20, 50, 30, 40);
 				
 			}
 			else if(x >= 0 && x <= 200 && y >= SPACE_FIRST_BUTTON + 180 && y <= SPACE_FIRST_BUTTON + 230){
-				
+				cout<<"\t\t\t\t=================3D2================="<<endl;
 				//Phan xu ly giao dien khi click vao "3D 2"
 				button(0, SPACE_FIRST_BUTTON, 200, SPACE_FIRST_BUTTON + 50, 8, "2D 1", 4, 2, 15);
 				button(0, SPACE_FIRST_BUTTON + 60, 200, SPACE_FIRST_BUTTON + 110, 8, "2D 2", 4, 2, 15);
@@ -118,13 +139,48 @@ void buttonsMouseClick(){
 				//Xoa btn RUN
 				rectangleSolid(0, 0, WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP, 2);
 				
-				//Phan ve, hien thi hinh anh khi click vao "3D 2"
-				rectangleSolid(WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP, WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, getmaxy(), 15); 	//Reset panel main	
-				/*
-					Goi ham tai day
-					Dien
-				*/
-			
+				//Reset panel main	
+				rectangleSolid(WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP, WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, getmaxy(), 15); 		
+				
+				//Reset panel right
+				rectangleSolid(WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, 0, getmaxx(), getmaxy(), 8);
+				
+				//Khoi tao truc toa do va luoi
+				initWorkStation();	
+				
+				//Khoi tao phan information
+				initGUIInfoHinhTru();
+				
+				//Lay cac input tu nguoi dung
+				int inPut[5];
+				int toaDoX = 1185;
+				int toaDoY = 65;
+				for(int i = 0; i<5; i++){
+					if(i == 0 || i == 1 || i == 2){
+						inPut[i] = nhanKyTuTuBanPhim(toaDoX, toaDoY);
+						if(i == 0 || i == 1){
+							outtextxy(toaDoX + 35, toaDoY, ";");
+						}
+						else{
+							outtextxy(toaDoX + 35, toaDoY, ")    ");
+						}
+						toaDoX = toaDoX + 45;
+					}
+					else{
+						toaDoX = 1230;
+						toaDoY = toaDoY + 30;
+						inPut[i] = nhanKyTuTuBanPhim(toaDoX, toaDoY);
+					}
+					
+				}
+				cout<<"\t\tINPUT"<<endl;
+				for(int i = 0; i<5; i++){
+					cout<<"\t"<<inPut[i]<<endl;
+				}
+				
+				//Ve hinh tru
+				veHinhTru(inPut[0]*5, inPut[1]*5, inPut[2]*5, inPut[3]*5, inPut[4]*5);
+//				veHinhTru(40, 30, 20, 20, 50);
 			}
 			else if(x >= 0 && x <= 200 &&  y >= SPACE_FIRST_BUTTON + 240 && y <= SPACE_FIRST_BUTTON + 290){
 				button(0, SPACE_FIRST_BUTTON, 200, SPACE_FIRST_BUTTON + 50, 8, "2D 1", 4, 2, 15);
