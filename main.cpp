@@ -9,8 +9,6 @@
 #define GOC_TOA_DO_X 660
 #define GOC_TOA_DO_Y 660
 #define DELAY 0
-
-       
   
 #include<iostream>
 #include<stdio.h>
@@ -21,7 +19,7 @@ using namespace std;
 #include "GUI.h"
 #include "eventMouseClick.h"
 
- 
+
 int main (){
 	
 	initwindow(1350, 700, "Ve hinh co ban", 160, 450); 

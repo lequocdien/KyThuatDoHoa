@@ -29,8 +29,11 @@ void buttonsMouseClick(){
 		if(ismouseclick(WM_LBUTTONDOWN))
 		{
 			getmouseclick(WM_LBUTTONDOWN, x, y);
+			if(x>=200&&x<=1110&&y>50&&y<=680)
+			{
 			cout<<"To doa click: "<<x<<" "<<y<<endl;
 			XuatToaDoClick(x,y);
+		    }
 			if(x >= 0 && x <= 200 && y >= SPACE_FIRST_BUTTON && y <= SPACE_FIRST_BUTTON + 50){
 				//Phan xu ly giao dien khi click vao "2D 1"
 				button(0, SPACE_FIRST_BUTTON, 200, SPACE_FIRST_BUTTON + 50, 15, "2D 1", 4, 4, 0);
@@ -231,8 +234,8 @@ void buttonsMouseClick(){
 				rectangleSolid(WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, 0, getmaxx(), getmaxy(), 8);
 				button(WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP + 250, WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, HEIGHT_PANEL_TOP + 280, 7, "Copyright © 2019 by", 9, 2, 1);
 				button(WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP + 280, WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, HEIGHT_PANEL_TOP + 310, 7, "1. Le Quoc Dien - N16DCCN023", 9, 2, 1);
-				button(WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP + 310, WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, HEIGHT_PANEL_TOP + 340, 7, "2. Phung Van Dai - N16DCCN034", 9, 2, 1);
-				button(WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP + 340, WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, HEIGHT_PANEL_TOP + 370, 7, "3. Vu Van Duong - N16DCCN035", 9, 2, 1);
+				button(WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP + 310, WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, HEIGHT_PANEL_TOP + 340, 7, "2. Phung Van Dai - N16DCCN035", 9, 2, 1);
+				button(WIDTH_PANEL_LEFT, HEIGHT_PANEL_TOP + 340, WIDTH_PANEL_LEFT + WIDTH_PANEL_MAIN, HEIGHT_PANEL_TOP + 370, 7, "3. Vu Van Duong - N16DCCN034", 9, 2, 1);
 			
 			}
 			else if(x >= 0 && x <= 200 && y >= SPACE_FIRST_BUTTON + 300 && y <= SPACE_FIRST_BUTTON + 350){
